@@ -136,10 +136,20 @@ function cursorAnimation() {
       gsap.to("#crsr", {
         opacity: 0
       });
+      if(window.innerWidth > 600){
       gsap.to("#video-cursor", {
         left: dets.x - document.querySelector("#video-cursor").offsetWidth*3.1,
         y: dets.y - document.querySelector("#video-cursor").offsetWidth*0.5,
       });
+    }else { 
+      // Mobile: Keep cursor centered
+      gsap.to(videoCursor, {
+          left: "50%",
+          top: "50%",
+          x: "-50%",
+          y: "-50%",
+      });
+  }
     });
   });
   videoContainer.addEventListener("mouseleave", function () {
@@ -161,10 +171,17 @@ function cursorAnimation() {
       video.play()
       video.style.opacity = 1
       document.querySelector("#video-cursor").innerHTML = `<i class="ri-pause-mini-fill"></i>`
+      if(window.innerWidth > 600){
       gsap.to("#video-cursor", {
         scale: 0.5
       })
       flag = 1
+    }else{
+      gsap.to("#video-cursor", {
+        scale: 0
+      })
+      flag = 1
+    }
     } else {
       video.pause()
       video.style.opacity = 0

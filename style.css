@@ -244,6 +244,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    z-index: 3;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -849,6 +850,7 @@ body {
     top: 0;
     opacity: 0;
     display: none;
+    z-index: 1;
     left: 0;
     pointer-events: none;
     -webkit-transform: translate(-50%, -50%);
@@ -1011,6 +1013,7 @@ body {
         text-transform: uppercase;
         line-height: 10.5vw;
         position: relative;
+        z-index: 3;
     }
     .hero h2 {
         font-size: 9.8vw;
@@ -1595,5 +1598,11 @@ body {
         margin-bottom: 4vw;
         font-size: 4vw;
     }
-    
+    #flag{
+        height: 33vw;
+        z-index: 1;
+    }
+    #crsr{
+        display: none;
+    }
 }
