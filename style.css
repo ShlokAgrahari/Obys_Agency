@@ -32,6 +32,7 @@
             box-sizing: border-box;
     font-family: "Plain Light";
     color: #fff;
+    cursor: none;
 }
 
 html,
